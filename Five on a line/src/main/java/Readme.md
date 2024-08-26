@@ -1,4 +1,4 @@
-<h1>Joc -Cinci pe linie<h1>
+<h1>Joc -Cinci pe linie</h1>
 Este un joc de doua pesoane in care fiecare pe o tabla pune piese diferite si in cearca sa obtina cinci peise pe o linie  (jos sus st dr sau pe diagonala )
 tabla fiind alcatuita din 64 de casute .In acest joc poate sa catige unul dintre jucatori sau sa fie egalitate .
 <br>

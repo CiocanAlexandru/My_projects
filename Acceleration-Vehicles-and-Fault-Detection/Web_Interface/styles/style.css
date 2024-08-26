@@ -1,0 +1,93 @@
+body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #E3D5D5;
+}
+
+.upper {
+    position: relative;
+    overflow: hidden;
+}
+
+.upper img {
+    width: 100%;
+    height: 23em;
+    clip-path: polygon(50% 0%, 100% 0, 100% 69%, 0 98%, 0 0);
+
+
+}
+
+.upper p {
+    position: absolute;
+    top: 17%;
+    left: 78%;
+    transform: translate(-50%, -50%);
+    color:#FFFFFF;
+    font-size: 50px; /* Ajustează dimensiunea textului */
+    font-weight: bold; /* Ajustează grosimea textului */
+    /* Alte stilizări pot fi adăugate aici */
+}
+
+ul {
+    
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-evenly;
+    color: black;
+    border-radius: 10%;
+    border: 1px solid black;
+    background-color:#FFFAFA;
+    width: 60%;
+    text-align: center;
+    margin: 40px  auto;
+    
+
+}
+
+ul li {
+    padding: 10px;
+    cursor: pointer;
+}
+
+section {
+   
+    padding-left: 20%;
+    padding-bottom: 0%;
+    padding-right: 20%;
+    padding-bottom: 3%;
+    
+}
+
+footer{
+    background-color: black;
+    
+}
+footer p {
+    color: white;
+    font-size:40px;
+    padding-left: 20%;
+    height: 5em;
+    
+    
+    
+}
+
+li a{
+ text-decoration: none;
+ color:black
+} 
+
+
+p a {
+    text-decoration: none;
+    color:red
+}
+
+.upper p a{
+    color:white;
+}

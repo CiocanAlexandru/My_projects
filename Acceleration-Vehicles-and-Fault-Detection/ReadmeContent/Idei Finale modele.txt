@@ -1,0 +1,113 @@
+-------------------------------------------------------FCNN----------------------------------------------
+
+import numpy as np
+import tensorflow as tf
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import MultiLabelBinarizer
+from sklearn.metrics import accuracy_score
+
+# Generați date de antrenament
+num_samples = 100
+num_features = 40
+feature_dim = 324
+
+# Generați o singură matrice de caracteristici cu dimensiunea (100, 40, 324)
+features_matrix = np.random.rand(num_samples, num_features, feature_dim)
+
+# Generați etichete pentru fiecare exemplu
+labels_vector = np.array([
+    ["SUV", "Toyota", "good"],
+    ["Sedan", "Honda", "bad"],
+    # Adăugați mai multe exemple aici
+])
+
+# Transformați etichetele într-un format adecvat pentru clasificare multi-etichetă
+mlb = MultiLabelBinarizer()
+transformed_labels = mlb.fit_transform(labels_vector)
+
+# Separați setul de date într-un set de antrenament și unul de testare
+X_train, X_test, y_train, y_test = train_test_split(features_matrix, transformed_labels, test_size=0.2, random_state=42)
+
+# Construiți modelul rețelei neurale
+model = tf.keras.Sequential([
+    tf.keras.layers.Flatten(input_shape=(num_features, feature_dim)),  # Aplatizează intrarea
+    tf.keras.layers.Dense(128, activation='linear'),  # Stratul ascuns cu 128 de neuroni și activare liniară
+    tf.keras.layers.Dense(64, activation='relu'),  # Al doilea strat ascuns cu 64 de neuroni și activare ReLU
+    tf.keras.layers.Dense(3, activation='softmax')  # Stratul de ieșire cu 3 neuroni și activare Softmax
+])
+
+# Compilează modelul
+model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
+
+# Antrenați modelul pe setul de antrenament
+model.fit(X_train, y_train, epochs=10, batch_size=32, validation_split=0.2)
+
+# Faceți predicții pe setul de testare
+predictions = model.predict(X_test)
+
+# Calculați acuratețea modelului
+accuracy = accuracy_score(np.argmax(y_test, axis=1), np.argmax(predictions, axis=1))
+print("Acuratețea modelului neural:", accuracy)
+
+
+---------------------------------------CNN-------------------------------------------
+
+model = tf.keras.Sequential([
+    tf.keras.layers.Flatten(input_shape=(num_features, feature_dim)),  # Aplatizează intrarea
+    tf.keras.layers.Dense(128, activation='relu'),  # Stratul ascuns cu 128 de neuroni și activare ReLU
+    tf.keras.layers.Dense(64, activation='relu'),  # Al doilea strat ascuns cu 64 de neuroni și activare ReLU
+    tf.keras.layers.Dense(3, activation='softmax')  # Stratul de ieșire cu 3 neuroni și activare Softmax
+])
+
+---------------------------------------SVM---------------------------------------------
+
+A new pattern classification method called the nearest feature line (NFL) is proposed in Li (2000), where the NFL explores the information provided by multiple prototypes per class. Audio features like MFCC, ZCR, brightness and bandwidth, spectrum flux were extracted (Lu, Zhang, & Li, 2003), and the performance using SVM, K-nearest neighbor (KNN), and Gaussian mixture model (GMM) were compared. Audio classification techniques for speech recognition and audio segmentation, for unsupervised multispeaker change detection are proposed in Huang and Hansen (2006). Two new extended-time features: variance of the spectrum flux (VSF) and variance of the zero-crossing rate (VZCR) are used to preclassify the audio and supply weights to the output probabilities of the GMM networks. The classification is then implemented using weighted GMM networks.
+
+import numpy as np
+from sklearn.svm import SVC
+from sklearn.preprocessing import MultiLabelBinarizer
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import accuracy_score, hamming_loss
+
+# Presupunem că aveți o matrice de caracteristici (100, 40, 324) și un vector de etichete (100, 3)
+features_matrix = np.random.rand(100, 40, 324)  # Puteți genera datele așa cum doriți
+
+labels_vector = np.array([
+    ["SUV", "Toyota", "good"],
+    ["Sedan", "Honda", "bad"],
+    # Adăugați mai multe exemple aici
+])
+
+# Transformați etichetele într-un format adecvat pentru clasificare multi-etichetă
+mlb = MultiLabelBinarizer()
+transformed_labels = mlb.fit_transform(labels_vector)
+
+# Separați setul de date într-un set de antrenament și unul de testare
+X_train, X_test, y_train, y_test = train_test_split(features_matrix, transformed_labels, test_size=0.2, random_state=42)
+
+# Creați un model SVM pentru clasificare multi-etichetă cu kernel linear
+svm_classifier_linear = SVC(kernel='linear')
+svm_classifier_rbf = SVC(kernel='rbf')  # Adăugăm modelul cu kernel Gaussian (RBF)
+
+# Antrenați ambele modele pe setul de antrenament
+svm_classifier_linear.fit(X_train, y_train)
+svm_classifier_rbf.fit(X_train, y_train)  # Modelul cu kernel RBF
+
+# Faceți predicții pe setul de testare pentru ambele modele
+predictions_linear = svm_classifier_linear.predict(X_test)
+predictions_rbf = svm_classifier_rbf.predict(X_test)  # Predicții pentru modelul cu kernel RBF
+
+# Calculați acuratețea și pierderea Hamming pentru ambele modele
+accuracy_linear = accuracy_score(y_test, predictions_linear)
+hamming_linear = hamming_loss(y_test, predictions_linear)
+
+accuracy_rbf = accuracy_score(y_test, predictions_rbf)
+hamming_rbf = hamming_loss(y_test, predictions_rbf)
+
+print("Acuratețea modelului SVM (linear):", accuracy_linear)
+print("Pierderea Hamming (linear):", hamming_linear)
+
+print("Acuratețea modelului SVM (RBF):", accuracy_rbf)
+print("Pierderea Hamming (RBF):", hamming_rbf)
+
+https://www.youtube.com/watch?v=XFZRVnP-MTU&list=PL-osiE80TeTvipOqomVEeZ1HRrcEvtZB_&index=10

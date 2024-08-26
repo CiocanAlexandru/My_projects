@@ -1,0 +1,54 @@
+.content h1 {
+    font-size: 30px;
+    border-left: 10px solid rgb(247, 86, 86);
+    width: 100%;
+    box-sizing: border-box;
+    ; /* Adjust as needed */
+}
+
+.content p{
+ font-size: 25px;   
+}
+
+.graphics img{
+    display: block;
+    margin: auto;
+   
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Adaugă această linie pentru a centra pe axa orizontală */
+    margin-top: 3em;
+    font-size: 20px;
+}
+
+.options label {
+    text-align: center;
+    margin-bottom: 0.5em;
+    display: block;
+}
+
+.options select {
+    width: 50%;
+    padding: 0.5em;
+    margin-bottom: 1em;
+    box-sizing: border-box; /* Asigură că padding-ul nu mărește lățimea totală */
+    border-radius: 1em;
+}
+
+/* Adaugă această regulă pentru a grupa labelul și selectul pe aceeași linie */
+.options label, .options select {
+    display: inline-block;
+}
+
+.submit-button {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    margin-top: 1em; /* Ajustează spațiul între opțiuni și buton */
+}

@@ -1,0 +1,140 @@
+from scipy.io.wavfile import read
+import librosa
+import numpy as np
+'''sample_rate , audio_data=read("Audi Q7.wav")
+print("Using spicy audio and sample rate and audio length")
+print(f"Dimension of data : {len(audio_data)}\n")
+print(f"Audio data : {np.array(audio_data)}\n")
+print(f"Sample rate Hz : {sample_rate}\n")
+print(f"{audio_data[len(audio_data)-1]}\n")
+#mfcc1=librosa.feature.mfcc(y=librosa.util.normalize(audio_data),sr=sample_rate,n_mfcc=40)
+first_channel=[i[0] for i in  audio_data]
+second_channel=[i[1] for i in  audio_data]
+first_channel_norm=first_channel/np.max(np.abs(first_channel))
+second_channel_norm=second_channel/np.max(np.abs(second_channel))
+audio_data=(second_channel_norm+first_channel_norm)/2
+mfcc1=librosa.feature.mfcc(y=audio_data,sr=sample_rate,n_mfcc=40)
+print(f"Spicy normafirst_chanel{first_channel_norm}\n")
+print(f"Spicy norm_second_chanel{second_channel_norm}\n" )
+print(f"Data normalize{np.array(audio_data)}")
+audio_data,sample_rate=librosa.load("Audi Q7.wav")
+print("Using librosa audio and sample rate and audio length")
+print(f"Dimension of data : {len(audio_data)}\n")
+print(f"Audio data : {np.array(audio_data)}\n")
+print(f"Sample rate Hz : {sample_rate}\n")
+
+mfcc2=librosa.feature.mfcc(y=audio_data,sr=sample_rate,n_mfcc=40)
+
+print(f"{audio_data[len(audio_data)-1]}\n")
+print(f"Futures MFCC spicy {mfcc1,len(mfcc1)} \n")
+print(f"Futures MFCC librosa {mfcc2,len(mfcc2)} \n" )'''
+
+def normelized_data(data): #Merge
+      if data.shape==(data.shape[0],):
+        max=np.max(data)
+        data=data/max 
+        return np.array(data)
+      if data.shape[1]==2:
+        first_channel=[i[0] for i in  data]
+        second_channel=[i[1] for i in  data]
+        first_channel_norm=first_channel/np.max(np.abs(first_channel))
+        second_channel_norm=second_channel/np.max(np.abs(second_channel))
+        data=(first_channel_norm+second_channel_norm)/2
+        return np.array(data)
+      
+
+
+
+def hot_encoding(): ## for multi leabaling  urmeaza sa o fac 
+    return 0
+
+def MFFC_Features(vehicle_audio):  # Merge
+        sample_rate , audio_data=read(vehicle_audio)
+        audio_data=normelized_data(audio_data)
+        mffc=librosa.feature.mfcc(y=audio_data,sr=sample_rate,n_mfcc=40)
+        print("MFCC \n")
+        mffc=librosa.util.normalize(mffc,axis=None)
+        return np.array(mffc)
+
+#print(MFFC_Features("Audi Q7.wav"))
+def PSD1_Features(vehicle_audio): #Merge
+        sample_rate , audio_data=read(vehicle_audio)
+        print("\n",audio_data)
+        audio_data=normelized_data(audio_data)
+        spectrogram=librosa.feature.melspectrogram(y=audio_data,sr=sample_rate)
+        #print(f" Spectrograma {spectrogram}")
+        PSD1=np.sum(spectrogram,axis=0)
+        PSD1=normelized_data(PSD1)
+        return np.array(PSD1)
+def FFT_Matrix(freq, spectrum):    #Merge
+        spectrum = np.abs(spectrum)
+        chunk_spectrum = np.zeros(25)
+        chunk_matrix = np.zeros([25, 25])
+        i = 0
+        while i < len(chunk_spectrum):
+            begin_value = i / 50
+            end_value = (i + 1) / 50
+            begin_index = min(range(len(freq)), key=lambda i: abs(freq[i] - begin_value))
+            end_index = min(range(len(freq)), key=lambda i: abs(freq[i] - end_value))
+            sorted_chunk = sorted(spectrum[begin_index:end_index])
+            sorted_chunk = np.asarray(sorted_chunk)
+            chunk_value = np.mean(sorted_chunk[-200:-1])
+            chunk_spectrum[i] = chunk_value
+            i += 1
+        for i in range(len(chunk_spectrum)):
+            for j in range(len(chunk_spectrum)):
+                chunk_matrix[i, j] = chunk_spectrum[i] / chunk_spectrum[j]
+        chunk_matrix = chunk_matrix.reshape(25 * 25)
+        return chunk_matrix
+
+def FFT_Matrix(freq, spectrum):      #Merge
+        spectrum = np.abs(spectrum)
+        chunk_spectrum = np.zeros(25)
+        chunk_matrix = np.zeros([25, 25])
+        i = 0
+        while i < len(chunk_spectrum):
+            begin_value = i / 50
+            end_value = (i + 1) / 50
+            begin_index = min(range(len(freq)), key=lambda i: abs(freq[i] - begin_value))
+            end_index = min(range(len(freq)), key=lambda i: abs(freq[i] - end_value))
+            sorted_chunk = sorted(spectrum[begin_index:end_index])
+            sorted_chunk = np.asarray(sorted_chunk)
+            chunk_value = np.mean(sorted_chunk[-200:-1])
+            chunk_spectrum[i] = chunk_value
+            i += 1
+        for i in range(len(chunk_spectrum)):
+            for j in range(len(chunk_spectrum)):
+                chunk_matrix[i, j] = chunk_spectrum[i] / chunk_spectrum[j]
+        chunk_matrix = chunk_matrix.reshape(25 * 25)
+        return chunk_matrix
+def FFT_Futures(audio):     # Merge 
+     sample_rate,data=read(audio)
+     data=normelized_data(data)
+     spect=np.fft.fft(data)
+     freq = np.abs(np.fft.fftfreq(len(spect)))
+     data=FFT_Matrix(freq,spect)
+     return np.array(data)
+#"Astra H 2005 (1).wav"#"Audi Q7.wav"
+def addNoise(vehicle_audio, noise_factor): # Merge 
+        sample_rate,vehicle_audio=read(vehicle_audio)
+        noise = np.random.randn(len(vehicle_audio))
+        vehicle_audio=normelized_data(vehicle_audio)
+        augmented_data = vehicle_audio + noise_factor * noise
+        print(f"Data raw :{vehicle_audio}\n")
+        print(f"Data augmented:{augmented_data}\n")
+        print(np.array_equal(vehicle_audio,augmented_data),"\n")
+        return np.array(augmented_data)
+def changePitch(vehicle_audio, pitch_factor=1):
+       sample_rate,vehicle_audio=read(vehicle_audio)
+       vehicle_audio=normelized_data(vehicle_audio)
+       augmented_data=librosa.effects.pitch_shift(vehicle_audio, sr=sample_rate, n_steps=pitch_factor)
+       print (f"Compare audio raw vs augmanted is {np.array_equal(vehicle_audio,augmented_data)}\n")
+       return np.array(augmented_data)
+Namefile1="Audi Q7.wav"
+Namefile2="Astra H 2005 (1).wav"
+#print(f"MFF fuetures Namefile1 {MFFC_Features(Namefile1)}\n")
+#print(f"PSD fuetures Namefile1 {PSD1_Features(Namefile1)}\n")
+#print(f"FFT fuetures Namefile1 {FFT_Futures(Namefile1)}")
+print(f"Cahnge picth{changePitch(Namefile1)}")
+
+

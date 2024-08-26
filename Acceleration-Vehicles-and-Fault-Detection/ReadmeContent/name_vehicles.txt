@@ -1,0 +1,109 @@
+Astra H 2005 (1).wav -> Sedan,Opel,good,1
+Astra-h-2005.wav ->Sedan,Opel,good,2
+Audi A6 3.0 motorina 2011.wav->Sedan,Audi,good,1
+Audi Q7.wav ->Sedan,Audi,good,2->Sedan,Audi,good,2
+BMW e 60.wav ->Sedan,BMW,good,1
+BMW seria 5.wav->Sedan,BMW,good,2
+BMW x1.wav -> SUV,BMW,good,1
+BMW x3 2015.wav ->SUV,BMW,good,2
+BMW-e60-2006.wav ->Sedan,BMW,good,3
+Bad Cv Axle.wav->BadCvAxle,bad,1
+Bad Link Bar.wav->BadLinkBar,bad,1
+Bad Stabilizer Link Noise.wav->BadLinkBar,bad,2
+Bad Wheels.wav -> BadWheels,bad,1
+Bar link right broken.wav->BadLinBar,bad,3
+Belt - Chirping.wav -> BeltChirping,bad,1
+Bmw4.wav ->Sedan,BMW,good,3
+Bora 2003-2004.wav->Sedan,Volkswagen,good,1
+Brake 2 problems.wav->BadBrake,bad,1
+Break problems.wav->BadBrake,bad,2
+Bwm x3 2019.wav->SUV,BMW,good,3
+Citroen Celyxe benzina .wav->Sedan,Citroen,good,1
+Dacia Duster.wav->SUV,Dacia,good,1
+Dacia Sandero 2009.wav->Sedan,Dacia,good,1
+Dacia duster 2.wav ->SUV,Dacia,good,2
+Dacia duster 2013.wav->SUV,Dacia,good,3
+Doblo mașina roșie (1).wav ->Pickup,Doblo,good,1
+Duster 2010.wav->SUV,Dacia,good,4
+Duster-2019.wav->SUV,Dacia,good,5
+Exhaust leak (1).wav->Exhaustleak,bad,1
+Exhaust leak.wav->Exhaustleak,bad,2
+Exhauste Leak.wav->Exhaustleak,bad,3
+Ford (1).wav->Sedan,Ford,good,1
+Ford Focus .wav->Sedan,Ford,good,2
+Ford Pasat.wav->Sedan,Ford,good,3
+Ford Tranzit 1.9 Dissel.wav->Pickup,Ford,good,1
+Ford Tranzit 1.9 TDI.wav->Pickup,Ford,good,2
+Ford Vignale ->Sedan,Ford,good,4
+Golf 7 2015.wav->Sedan,Volkswagen,good,1
+Golf 7.wav->Sedan,Volkswagen,good,2
+Golf-7.wav->Sedan,Volkswagen,good,3
+Golf-plus-2007.wav->Sedan,Volkswagen,good,4
+Grinding Breaks.wav->GrindingBreaks,bad,1
+Hyundai Accent benzina 1.4.wav->Sedan,Hyundai,good,1
+Iveco Stralis 460 e6 disel (cisterna).wav->Commercial,Iveco,good,1
+Leak Sound Exausted.wav->LeakSound,bad,1
+Logan 1.2 benzina .wav->Sedan,Dacia,good,2
+Logan 1.4 benzina 2005.wav->Sedan,Dacia,good,3
+Logan 1.4 benzina 2018.wav->Sedan,Dacia,good,4
+Logan 1.4 benzina.wav->Sedan,Dacia,good,5
+Logan 2 2011.wav->Sedan,Dacia,good,6
+Loose Exhaust Shield.wav->LooseExhaustShield,bad,1
+LowPowerSteringFluid.wav->LowPowerSteringFluid,bad,2
+MAN tir.wav->Commercial,Man,good,1
+Mercedes Atego.wav->Pickup,Mercedes,good,1
+Mercedes E classe.wav->Sedan,Mercedes,good,1
+Mercedes S550.wav->Sedan,Mercedes,good,2
+Mercedes Sprinter 2.2 motorina (1).wav->Pickup,Mercedes,good,2
+Mercedes Sprinter 2.2 motorina .wav->Pickup,Mercedes,good,3
+Mitubisi 2002 Dissel.wav->Pickup,Mitubisi,good,1
+Mitubisi outlander.wav->SUV,Mitubisi,good,1
+Nisan (1).wav->Sedan,Nissan,good,1
+Nissan PatFiinder  .wav->SUV,Nissan,good,1
+Opel Astra H 1.7 motorina 2008.wav->Sedan,Opel,good,1
+Opel Astra H, 1686cmc, an 2008.wav->Sedan,Opel,good,2
+Opel Insignia 2016.wav->Sedan,Insignia,good,1
+Opel Moka.wav->SUV,Opel,good,1
+Opel Zafira.wav->Sedan,Opel,good,3
+Passat b6 2007.wav->Sedan,Volkswagen,good,1
+Peugeot 5008- an 2012.wav->Sedan,Peugeot,good,1
+Peugeot-5008-2012.wav->Sedan,Peugeot,good,2
+Porche CAYENNE.wav->SUV,Porche,good,1
+Porsche CYANNE.wav->SUV,Porche,good,2
+Range rover sport 2019.wav->SUV,RangeRover,good,1
+Renault Clio 2014.wav->Sedan,Renault,good,1
+Renault Laguna 2012.wav->Sedan,Renault,good,2
+Renault Simbol Dissel 2009.wav->Sedan,Renault,good,3
+Renault Scenic.wav->Sedan,Renault,good,4
+Scoda.wav->Sedan,Skoda,good,1
+Seat Toledo .wav->Sedan,Seat,good,1
+Skeaqy Breaks.wav->SkeaqyBreaks,bad,1
+Skoda Fabia 1.2 Benzina .wav->Sedan,Skoda,good,2
+Skoda Octavia 2  1.9 TDI.wav->Sedan,Skoda,good,3
+Skoda Octavia 3.wav->Sedan,Skoda,good,4
+Skoda Octavia veche (1).wav->Sedan,Skoda,good,5
+Sqealing Belt.wav->SqealingBelt,bad,1
+Suzuchi Gravitara 1.9 motorina.wav->SUV,Suzuki,good,1
+Suzuki grand vitara 1.9 motorina.wav->SUV,Suzuki,good,2
+Suzuki grand vitara.wav->SUV,Suzuki,good,3
+Tokota Avensis.wav->Sedan,Toyota,good,1
+Toyota Yaris 1.4 hibrid.wav->Sedan,Toyota,good,2
+Toyota Yaris hibrid.wav->Hibrid,Toyota,good,1
+Valswagen Vagen.wav->Sedan,Volkswagen,good,2
+Volkswagen  Pollo 1.6 TDI motorina.wav->Sedan,Volkswagen,good,3
+Volkswagen  caddy.wav->Pickup,Volkswagen,good,1
+Volkswagen Golf 5.wav->Sedan,Volkswagen,good,4
+Volkswagen Tuareg.wav->SUV,Volkswagen,good,1
+Volkswagen Up 1.0 benzina.wav->Sedan,Volkswagen,good,5
+Volkswagen.wav->Sedan,Volkswagen,good,6
+Volskwagen Caddy 2.0 motorina.wav->Pickup,Volkswagen,good,2
+Volsvagen Sharan vechi 2005 (1).wav->Sedan,Volkswagen,good,7
+Volvo FH460 (cisterna).wav->Commercial,Volvo,good,1
+Volvo xc40 Hibrid benzina.wav->Hibrid,Volvo,good,1
+Volvo xc60 2018.wav->SUV,Volvo,good,1
+Vw-caddy-2006.wav->Pickup,Volkswagen,good,3
+X5-2006.wav->SUV,BMW,good,1
+
+
+
+

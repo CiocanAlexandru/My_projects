@@ -1,0 +1,34 @@
+.content{
+    display:flex;
+    flex-direction: column;
+}
+.content h1{
+    color:white;
+    column-count: 20px;
+    border-left:10px solid rgb(247, 86, 86);
+    margin: 0;
+    padding-left: 5px;
+    font-size: 40px;
+    flex: 1;
+}
+.info-content{
+    margin-top: 2em;
+    display: flex;
+    display:row;    
+}
+.content p{
+    padding-top: 30px;
+    font-size:20px;
+    font-weight: bold;
+    max-width: 470px;
+    overflow-wrap: break-word;
+    float:left;
+    margin-left:2em;
+    align-items: center;
+}
+.info-content img{
+    height: 20em;
+    width: 20em;
+    margin-top:0;
+    align-items: right;
+}

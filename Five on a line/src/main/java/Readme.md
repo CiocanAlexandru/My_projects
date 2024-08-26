@@ -1,18 +1,19 @@
 <h1>Joc -Cinci pe linie<h1>
-<p>Este un joc de doua pesoane in care fiecare pe o tabla pune piese diferite si in cearca sa obtina cinci peise pe o linie  (jos sus st dr sau pe diagonala )
-tabla fiind alcatuita din 64 de casute .In acest joc poate sa catige unul dintre jucatori sau sa fie egalitate .</p>
+Este un joc de doua pesoane in care fiecare pe o tabla pune piese diferite si in cearca sa obtina cinci peise pe o linie  (jos sus st dr sau pe diagonala )
+tabla fiind alcatuita din 64 de casute .In acest joc poate sa catige unul dintre jucatori sau sa fie egalitate .
 <br>
-<p>Pentru mai multe informati despre regulule jocului linkul urmator:<a href="https://brainking.com/ro/GameRules?tp=5"> Rules </a><p>
+Pentru mai multe informati despre regulule jocului linkul urmator:<a href="https://brainking.com/ro/GameRules?tp=5"> Rules </a>
 <br>
-<p>Functionalitati :</p>
+Functionalitati :
 <br>
-<p>Jucatorul poate  in meniu daca apasa pe start sa joace un joc nou unde va trebui sa isi introduca numele dupa apare tabla,sau daca
+Jucatorul poate  in meniu daca apasa pe start sa joace un joc nou unde va trebui sa isi introduca numele dupa apare tabla,sau daca
 apasa pe exit va iesi din joc ,sau daca apasa pe Istori ii va fi afisat o lista cu ultimele 9 meciuri jucate poate sa iasa din lista 
 apasand pe back din Istoric .Dupa finalizarea partidei se va afisa castigatorul inpreuna cu doua butoane meniu care apasat te intoarce 
-in meniu sau exit care ichide jocul.Jocul find acompaniat cu sunete !</p>
+in meniu sau exit care ichide jocul.Jocul find acompaniat cu sunete !
+<br>
 
-
-<p>Clasele pe care le folosesc</p> 
+Clasele pe care le folosesc
+<br> 
 
 <h2>1. Clasa <code>Game</code> (implementează interfața <code>ActionListener</code>)</h2>
 <ul>

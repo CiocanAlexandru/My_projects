@@ -7,26 +7,22 @@ def Problema1(env, date1_d, date1_m, date1_y, date2_d, date2_m, date2_y, answer)
     env.clear()
     env.load("./problema1.clp")
     env.reset()
-    ##Daca una dintre casete este goala
     ok = 0
     if date1_d.get() == "" or date1_m.get() == "" or date1_y.get() == "" or date2_d.get() == "" or date2_m.get() == "" or date2_y.get() == "":
         answer.config(text=' ')
         answer.config(text='Este o problema')
         ok = 1
-    ##Daca ce sa introdus nu este numar si este pozitiv
     if (
             date1_d.get().isnumeric() == False or date1_m.get().isnumeric() == False or date1_y.get().isnumeric() == False or
             date2_d.get().isnumeric() == False or date2_m.get().isnumeric() == False or date2_y.get().isnumeric() == False):
         answer.config(text=' ')
         answer.config(text='Este o problema')
         ok = 1
-    ##Daca datele sunt identice
     if ok == 0:
         if date1_d.get() == date2_d.get() and date1_m.get() == date2_m.get() and date1_y.get() == date2_y.get():
             answer.config(text=' ')
             answer.config(text='Date identice')
             ok = 1
-    ##Adaugare de facturi si dupa rulare 
     if ok == 0:
         env.assert_string(
             '(date (day ' + date1_d.get() + ')(month ' + date1_m.get() + ')(year ' + date1_y.get() + ')(nr 1))')
